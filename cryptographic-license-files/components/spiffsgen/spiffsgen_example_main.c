@@ -78,7 +78,7 @@ static void compute_alice_txt_md5(void)
     fclose(f);
 }
 
-void app_main(void)
+void spiffsgen_example_main(void)
 {
     ESP_LOGI(TAG, "Initializing SPIFFS");
 
