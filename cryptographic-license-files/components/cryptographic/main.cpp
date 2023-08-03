@@ -267,7 +267,6 @@ std::string decrypt_license_file(const std::string key, license_file lic)
 
   // Convert to bytes
   int ciphertext_size;
-  int plaintext_size;
   int iv_size;
   int tag_size;
   int aes_size;
@@ -377,7 +376,7 @@ license parse_license(const std::string dec)
 
       if (type == "entitlements")
       {
-        entitlement entl {id};
+        entitlement entl {id, "", ""};
 
         entl.name = attrs.get("name").to_str();
         entl.code = attrs.get("code").to_str();
@@ -387,7 +386,7 @@ license parse_license(const std::string dec)
 
       if (type == "products")
       {
-        product prod {id};
+        product prod {id, ""};
 
         prod.name = attrs.get("name").to_str();
 
@@ -396,7 +395,7 @@ license parse_license(const std::string dec)
 
       if (type == "policies")
       {
-        policy pol {id};
+        policy pol {id, ""};
 
         pol.name = attrs.get("name").to_str();
 
@@ -405,7 +404,7 @@ license parse_license(const std::string dec)
 
       if (type == "users")
       {
-        user usr {id};
+        user usr {id, "", "", "", ""};
 
         usr.first_name = attrs.get("firstName").to_str();
         usr.last_name = attrs.get("lastName").to_str();
