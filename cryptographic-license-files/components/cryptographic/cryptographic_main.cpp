@@ -295,12 +295,50 @@ std::string decrypt_license_file(const std::string key, license_file lic)
   auto plaintext_bytes = new unsigned char[ciphertext_size];
 
   // Initialize AES
+  std::cout << "**** before EVP_aes_256_gcm ***" << std::endl;
   auto cipher = EVP_aes_256_gcm();
-  auto ctx = EVP_CIPHER_CTX_new();
+  std::cout << "**** after EVP_aes_256_gcm ***" << std::endl;
 
+  std::cout << "**** before EVP_CIPHER_CTX_new ***" << std::endl;
+  auto ctx = EVP_CIPHER_CTX_new();
+  std::cout << "**** after EVP_CIPHER_CTX_new ***" << std::endl;
+
+
+  int ret = 0;
   // Decrypt
-  EVP_DecryptInit_ex(ctx, cipher, nullptr, nullptr, nullptr);
-  EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_IVLEN, iv_size, nullptr);
+  std::cout << "**** before EVP_DecryptInit_ex ***" << std::endl;
+  ret = EVP_DecryptInit_ex(ctx, cipher, nullptr, nullptr, nullptr);
+  switch (ret) {
+  case SSL_SUCCESS:
+	  std::cout << "EVP_DecryptInit_ex SSL_SUCCESS" << std::endl;
+	  break;
+  case SSL_FAILURE:
+	  std::cout << "EVP_DecryptInit_ex SSL_FAILURE" << std::endl;
+	  break;
+  default:
+	  std::cout << "EVP_DecryptInit_ex returned " << ret << std::endl;
+	  break;
+  }
+  std::cout << "**** after EVP_DecryptInit_ex ***" << std::endl;
+
+  std::cout << "**** before EVP_CIPHER_CTX_ctrl ***" << std::endl;
+  ret = EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_IVLEN, iv_size, nullptr);
+  switch (ret) {
+  case SSL_SUCCESS:
+	  std::cout << "EVP_CIPHER_CTX_ctrl SSL_SUCCESS" << std::endl;
+	  break;
+  case SSL_FAILURE:
+	  std::cout << "EVP_CIPHER_CTX_ctrl SSL_FAILURE" << std::endl;
+	  break;
+  default:
+	  std::cout << "EVP_CIPHER_CTX_ctrl returned " << ret << std::endl;
+	  break;
+  }
+  std::cout << "**** after EVP_CIPHER_CTX_ctrl ***" << std::endl;
+
+
+
+
   EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_TAG, tag_size, tag_bytes);
 
   auto status = EVP_DecryptInit_ex(ctx, nullptr, nullptr, key_bytes, iv_bytes);
