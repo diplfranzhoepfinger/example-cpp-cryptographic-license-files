@@ -281,6 +281,7 @@ std::string decrypt_license_file(const std::string key, license_file lic)
   auto ctx = EVP_CIPHER_CTX_new();
 
   // Decrypt
+  EVP_CIPHER_CTX_init(ctx);
   EVP_DecryptInit_ex(ctx, cipher, nullptr, nullptr, nullptr);
   EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_IVLEN, iv_size, nullptr);
   EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_TAG, tag_size, tag_bytes);
