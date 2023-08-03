@@ -88,7 +88,7 @@ std::time_t strtotime(const std::string s) {
 
   strptime(s.c_str(), "%FT%T%z", &t);
 
-  return timegm(&t);
+  return mktime(&t);
 }
 
 // license_file represents a Keygen license file resource.
