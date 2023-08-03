@@ -44,6 +44,21 @@
 			<location>/home/franz/esp-idf-v5.1/components/app_update/esp_ota_ops.c</location>
 		</link>
 		<link>
+			<name>build/ide/esp_idf_components/console/commands.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/commands.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/esp_console_repl.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/esp_console_repl.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/split_argv.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/split_argv.c</location>
+		</link>
+		<link>
 			<name>build/ide/esp_idf_components/cxx/cxx_exception_stubs.cpp</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/cxx/cxx_exception_stubs.cpp</location>
@@ -52,6 +67,46 @@
 			<name>build/ide/esp_idf_components/cxx/cxx_guards.cpp</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/cxx/cxx_guards.cpp</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp-tls/esp_tls.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp-tls/esp_tls.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp-tls/esp_tls_error_capture.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp-tls/esp_tls_error_capture.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp-tls/esp_tls_mbedtls.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp-tls/esp_tls_mbedtls.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_adc/adc_cali.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_adc/adc_cali.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_adc/adc_cali_curve_fitting.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_adc/adc_cali_curve_fitting.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_adc/adc_common.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_adc/adc_common.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_adc/adc_continuous.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_adc/adc_continuous.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_adc/adc_oneshot.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_adc/adc_oneshot.c</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/esp_app_format/esp_app_desc.c</name>
@@ -72,6 +127,11 @@
 			<name>build/ide/esp_idf_components/esp_event/esp_event_private.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/esp_event/esp_event_private.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_http_client/esp_http_client.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_http_client/esp_http_client.c</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/esp_hw_support/adc_share_hw_ctrl.c</name>
@@ -504,6 +564,11 @@
 			<location>/home/franz/esp-idf-v5.1/components/heap/multi_heap.c</location>
 		</link>
 		<link>
+			<name>build/ide/esp_idf_components/http_parser/http_parser.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/http_parser/http_parser.c</location>
+		</link>
+		<link>
 			<name>build/ide/esp_idf_components/log/log.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/log/log.c</location>
@@ -594,6 +659,21 @@
 			<location>/home/franz/esp-idf-v5.1/components/newlib/time.c</location>
 		</link>
 		<link>
+			<name>build/ide/esp_idf_components/perfmon/xtensa_perfmon_access.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/perfmon/xtensa_perfmon_access.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/perfmon/xtensa_perfmon_apis.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/perfmon/xtensa_perfmon_apis.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/perfmon/xtensa_perfmon_masks.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/perfmon/xtensa_perfmon_masks.c</location>
+		</link>
+		<link>
 			<name>build/ide/esp_idf_components/pthread/pthread.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/pthread/pthread.c</location>
@@ -617,6 +697,36 @@
 			<name>build/ide/esp_idf_components/pthread/pthread_semaphore.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/pthread/pthread_semaphore.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/sdmmc/sdmmc_cmd.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/sdmmc/sdmmc_cmd.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/sdmmc/sdmmc_common.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/sdmmc/sdmmc_common.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/sdmmc/sdmmc_init.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/sdmmc/sdmmc_init.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/sdmmc/sdmmc_io.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/sdmmc/sdmmc_io.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/sdmmc/sdmmc_mmc.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/sdmmc/sdmmc_mmc.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/sdmmc/sdmmc_sd.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/sdmmc/sdmmc_sd.c</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/soc/dport_access_common.c</name>
@@ -724,6 +834,66 @@
 			<location>/home/franz/esp-idf-v5.1/components/spi_flash/spi_flash_wrap.c</location>
 		</link>
 		<link>
+			<name>build/ide/esp_idf_components/spiffs/esp_spiffs.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/spiffs/esp_spiffs.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/spiffs/spiffs_api.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/spiffs/spiffs_api.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/tcp_transport/transport.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/tcp_transport/transport.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/tcp_transport/transport_internal.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/tcp_transport/transport_internal.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/tcp_transport/transport_socks_proxy.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/tcp_transport/transport_socks_proxy.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/tcp_transport/transport_ssl.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/tcp_transport/transport_ssl.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/tcp_transport/transport_ws.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/tcp_transport/transport_ws.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/unity/unity_port_esp32.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/unity/unity_port_esp32.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/unity/unity_runner.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/unity/unity_runner.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/unity/unity_utils_cache.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/unity/unity_utils_cache.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/unity/unity_utils_freertos.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/unity/unity_utils_freertos.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/unity/unity_utils_memory.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/unity/unity_utils_memory.c</location>
+		</link>
+		<link>
 			<name>build/ide/esp_idf_components/vfs/vfs.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/vfs/vfs.c</location>
@@ -747,6 +917,41 @@
 			<name>build/ide/esp_idf_components/vfs/vfs_uart.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/vfs/vfs_uart.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wear_levelling/Partition.cpp</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wear_levelling/Partition.cpp</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wear_levelling/SPI_Flash.cpp</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wear_levelling/SPI_Flash.cpp</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wear_levelling/WL_Ext_Perf.cpp</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wear_levelling/WL_Ext_Perf.cpp</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wear_levelling/WL_Ext_Safe.cpp</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wear_levelling/WL_Ext_Safe.cpp</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wear_levelling/WL_Flash.cpp</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wear_levelling/WL_Flash.cpp</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wear_levelling/crc32.cpp</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wear_levelling/crc32.cpp</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wear_levelling/wear_levelling.cpp</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wear_levelling/wear_levelling.cpp</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/xtensa/eri.c</name>
@@ -832,6 +1037,81 @@
 			<name>build/ide/esp_idf_components/bootloader_support/src/secure_boot.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/bootloader_support/src/secure_boot.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/argtable3/arg_cmd.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/argtable3/arg_cmd.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/argtable3/arg_date.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/argtable3/arg_date.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/argtable3/arg_dbl.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/argtable3/arg_dbl.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/argtable3/arg_dstr.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/argtable3/arg_dstr.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/argtable3/arg_end.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/argtable3/arg_end.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/argtable3/arg_file.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/argtable3/arg_file.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/argtable3/arg_hashtable.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/argtable3/arg_hashtable.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/argtable3/arg_int.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/argtable3/arg_int.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/argtable3/arg_lit.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/argtable3/arg_lit.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/argtable3/arg_rem.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/argtable3/arg_rem.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/argtable3/arg_rex.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/argtable3/arg_rex.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/argtable3/arg_str.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/argtable3/arg_str.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/argtable3/arg_utils.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/argtable3/arg_utils.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/argtable3/argtable3.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/argtable3/argtable3.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/console/linenoise/linenoise.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/console/linenoise/linenoise.c</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/driver/dac/dac_common.c</name>
@@ -1089,6 +1369,21 @@
 			<location>/home/franz/esp-idf-v5.1/components/efuse/src/esp_efuse_utility.c</location>
 		</link>
 		<link>
+			<name>build/ide/esp_idf_components/esp-tls/esp-tls-crypto/esp_tls_crypto.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp-tls/esp-tls-crypto/esp_tls_crypto.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_adc/deprecated/esp_adc_cal_common_legacy.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_adc/deprecated/esp_adc_cal_common_legacy.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_adc/esp32/adc_cali_line_fitting.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_adc/esp32/adc_cali_line_fitting.c</location>
+		</link>
+		<link>
 			<name>build/ide/esp_idf_components/esp_coex/esp32/esp_coex_adapter.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/esp_coex/esp32/esp_coex_adapter.c</location>
@@ -1099,9 +1394,199 @@
 			<location>/home/franz/esp-idf-v5.1/components/esp_common/src/esp_err_to_name.c</location>
 		</link>
 		<link>
+			<name>build/ide/esp_idf_components/esp_eth/src/esp_eth.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_eth/src/esp_eth.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_eth/src/esp_eth_mac_esp.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_eth/src/esp_eth_mac_esp.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_eth/src/esp_eth_netif_glue.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_eth/src/esp_eth_netif_glue.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_eth/src/esp_eth_phy_802_3.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_eth/src/esp_eth_phy_802_3.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_eth/src/esp_eth_phy_dp83848.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_eth/src/esp_eth_phy_dp83848.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_eth/src/esp_eth_phy_ip101.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_eth/src/esp_eth_phy_ip101.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_eth/src/esp_eth_phy_ksz80xx.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_eth/src/esp_eth_phy_ksz80xx.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_eth/src/esp_eth_phy_lan87xx.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_eth/src/esp_eth_phy_lan87xx.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_eth/src/esp_eth_phy_rtl8201.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_eth/src/esp_eth_phy_rtl8201.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_gdbstub/src/gdbstub.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_gdbstub/src/gdbstub.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_gdbstub/src/gdbstub_transport.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_gdbstub/src/gdbstub_transport.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_gdbstub/src/packet.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_gdbstub/src/packet.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_hid/src/esp_hid_common.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_hid/src/esp_hid_common.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_hid/src/esp_hidd.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_hid/src/esp_hidd.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_hid/src/esp_hidh.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_hid/src/esp_hidh.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_http_client/lib/http_auth.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_http_client/lib/http_auth.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_http_client/lib/http_header.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_http_client/lib/http_header.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_http_client/lib/http_utils.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_http_client/lib/http_utils.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_http_server/src/httpd_main.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_http_server/src/httpd_main.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_http_server/src/httpd_parse.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_http_server/src/httpd_parse.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_http_server/src/httpd_sess.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_http_server/src/httpd_sess.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_http_server/src/httpd_txrx.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_http_server/src/httpd_txrx.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_http_server/src/httpd_uri.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_http_server/src/httpd_uri.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_http_server/src/httpd_ws.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_http_server/src/httpd_ws.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_https_ota/src/esp_https_ota.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_https_ota/src/esp_https_ota.c</location>
+		</link>
+		<link>
 			<name>build/ide/esp_idf_components/esp_hw_support/port/esp_clk_tree_common.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/esp_hw_support/port/esp_clk_tree_common.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_lcd/src/esp_lcd_common.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_lcd/src/esp_lcd_common.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_lcd/src/esp_lcd_panel_io.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_lcd/src/esp_lcd_panel_io.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_lcd/src/esp_lcd_panel_io_i2c.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_lcd/src/esp_lcd_panel_io_i2c.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_lcd/src/esp_lcd_panel_io_i2s.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_lcd/src/esp_lcd_panel_io_i2s.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_lcd/src/esp_lcd_panel_io_spi.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_lcd/src/esp_lcd_panel_io_spi.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_lcd/src/esp_lcd_panel_nt35510.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_lcd/src/esp_lcd_panel_nt35510.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_lcd/src/esp_lcd_panel_ops.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_lcd/src/esp_lcd_panel_ops.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_lcd/src/esp_lcd_panel_ssd1306.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_lcd/src/esp_lcd_panel_ssd1306.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_lcd/src/esp_lcd_panel_st7789.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_lcd/src/esp_lcd_panel_st7789.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_local_ctrl/proto-c/esp_local_ctrl.pb-c.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_local_ctrl/proto-c/esp_local_ctrl.pb-c.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_local_ctrl/src/esp_local_ctrl.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_local_ctrl/src/esp_local_ctrl.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_local_ctrl/src/esp_local_ctrl_handler.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_local_ctrl/src/esp_local_ctrl_handler.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_local_ctrl/src/esp_local_ctrl_transport_httpd.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_local_ctrl/src/esp_local_ctrl_transport_httpd.c</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/esp_netif/lwip/esp_netif_lwip.c</name>
@@ -1219,6 +1704,11 @@
 			<location>/home/franz/esp-idf-v5.1/components/esp_timer/src/system_time.c</location>
 		</link>
 		<link>
+			<name>build/ide/esp_idf_components/esp_wifi/esp32/esp_adapter.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_wifi/esp32/esp_adapter.c</location>
+		</link>
+		<link>
 			<name>build/ide/esp_idf_components/esp_wifi/src/mesh_event.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/esp_wifi/src/mesh_event.c</location>
@@ -1229,14 +1719,104 @@
 			<location>/home/franz/esp-idf-v5.1/components/esp_wifi/src/smartconfig.c</location>
 		</link>
 		<link>
+			<name>build/ide/esp_idf_components/esp_wifi/src/smartconfig_ack.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_wifi/src/smartconfig_ack.c</location>
+		</link>
+		<link>
 			<name>build/ide/esp_idf_components/esp_wifi/src/wifi_default.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/esp_wifi/src/wifi_default.c</location>
 		</link>
 		<link>
+			<name>build/ide/esp_idf_components/esp_wifi/src/wifi_default_ap.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_wifi/src/wifi_default_ap.c</location>
+		</link>
+		<link>
 			<name>build/ide/esp_idf_components/esp_wifi/src/wifi_init.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/esp_wifi/src/wifi_init.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_wifi/src/wifi_netif.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_wifi/src/wifi_netif.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/espcoredump/src/core_dump_binary.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/espcoredump/src/core_dump_binary.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/espcoredump/src/core_dump_checksum.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/espcoredump/src/core_dump_checksum.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/espcoredump/src/core_dump_common.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/espcoredump/src/core_dump_common.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/espcoredump/src/core_dump_elf.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/espcoredump/src/core_dump_elf.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/espcoredump/src/core_dump_flash.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/espcoredump/src/core_dump_flash.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/espcoredump/src/core_dump_uart.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/espcoredump/src/core_dump_uart.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/fatfs/diskio/diskio.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/fatfs/diskio/diskio.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/fatfs/diskio/diskio_rawflash.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/fatfs/diskio/diskio_rawflash.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/fatfs/diskio/diskio_sdmmc.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/fatfs/diskio/diskio_sdmmc.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/fatfs/diskio/diskio_wl.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/fatfs/diskio/diskio_wl.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/fatfs/src/ff.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/fatfs/src/ff.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/fatfs/src/ffunicode.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/fatfs/src/ffunicode.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/fatfs/vfs/vfs_fat.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/fatfs/vfs/vfs_fat.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/fatfs/vfs/vfs_fat_sdmmc.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/fatfs/vfs/vfs_fat_sdmmc.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/fatfs/vfs/vfs_fat_spiflash.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/fatfs/vfs/vfs_fat_spiflash.c</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/freertos/FreeRTOS-Kernel/croutine.c</name>
@@ -1314,6 +1894,16 @@
 			<location>/home/franz/esp-idf-v5.1/components/heap/tlsf/tlsf.c</location>
 		</link>
 		<link>
+			<name>build/ide/esp_idf_components/json/cJSON/cJSON.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/json/cJSON/cJSON.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/json/cJSON/cJSON_Utils.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/json/cJSON/cJSON_Utils.c</location>
+		</link>
+		<link>
 			<name>build/ide/esp_idf_components/lwip/port/sockets_ext.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/lwip/port/sockets_ext.c</location>
@@ -1352,6 +1942,11 @@
 			<name>build/ide/esp_idf_components/mbedtls/port/net_sockets.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/mbedtls/port/net_sockets.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/mqtt/esp-mqtt/mqtt_client.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/mqtt/esp-mqtt/mqtt_client.c</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/newlib/port/esp_time_impl.c</name>
@@ -1417,6 +2012,31 @@
 			<name>build/ide/esp_idf_components/nvs_flash/src/nvs_types.cpp</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/nvs_flash/src/nvs_types.cpp</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/protocomm/proto-c/constants.pb-c.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/protocomm/proto-c/constants.pb-c.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/protocomm/proto-c/sec0.pb-c.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/protocomm/proto-c/sec0.pb-c.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/protocomm/proto-c/sec1.pb-c.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/protocomm/proto-c/sec1.pb-c.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/protocomm/proto-c/sec2.pb-c.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/protocomm/proto-c/sec2.pb-c.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/protocomm/proto-c/session.pb-c.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/protocomm/proto-c/session.pb-c.c</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/soc/esp32/adc_periph.c</name>
@@ -1524,6 +2144,61 @@
 			<location>/home/franz/esp-idf-v5.1/components/soc/esp32/uart_periph.c</location>
 		</link>
 		<link>
+			<name>build/ide/esp_idf_components/wifi_provisioning/proto-c/wifi_config.pb-c.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wifi_provisioning/proto-c/wifi_config.pb-c.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wifi_provisioning/proto-c/wifi_constants.pb-c.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wifi_provisioning/proto-c/wifi_constants.pb-c.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wifi_provisioning/proto-c/wifi_ctrl.pb-c.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wifi_provisioning/proto-c/wifi_ctrl.pb-c.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wifi_provisioning/proto-c/wifi_scan.pb-c.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wifi_provisioning/proto-c/wifi_scan.pb-c.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wifi_provisioning/src/handlers.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wifi_provisioning/src/handlers.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wifi_provisioning/src/manager.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wifi_provisioning/src/manager.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wifi_provisioning/src/scheme_console.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wifi_provisioning/src/scheme_console.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wifi_provisioning/src/scheme_softap.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wifi_provisioning/src/scheme_softap.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wifi_provisioning/src/wifi_config.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wifi_provisioning/src/wifi_config.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wifi_provisioning/src/wifi_ctrl.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wifi_provisioning/src/wifi_ctrl.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/wifi_provisioning/src/wifi_scan.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/wifi_provisioning/src/wifi_scan.c</location>
+		</link>
+		<link>
 			<name>build/ide/esp_idf_components/wpa_supplicant/port/eloop.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/wpa_supplicant/port/eloop.c</location>
@@ -1552,6 +2227,11 @@
 			<name>build/ide/esp_idf_components/bootloader_support/src/idf/bootloader_sha.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/bootloader_support/src/idf/bootloader_sha.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/cmock/CMock/src/cmock.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/cmock/CMock/src/cmock.c</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/driver/dac/esp32/dac_dma.c</name>
@@ -1597,6 +2277,16 @@
 			<name>build/ide/esp_idf_components/driver/touch_sensor/esp32/touch_sensor.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/driver/touch_sensor/esp32/touch_sensor.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_adc/deprecated/esp32/esp_adc_cal_legacy.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_adc/deprecated/esp32/esp_adc_cal_legacy.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_http_server/src/util/ctrl_sock.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_http_server/src/util/ctrl_sock.c</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/esp_hw_support/port/esp32/cache_sram_mmu.c</name>
@@ -1672,6 +2362,11 @@
 			<name>build/ide/esp_idf_components/esp_netif/lwip/netif/wlanif.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/esp_netif/lwip/netif/wlanif.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/fatfs/port/freertos/ffsystem.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/fatfs/port/freertos/ffsystem.c</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/freertos/FreeRTOS-Kernel/portable/port_systick.c</name>
@@ -2274,6 +2969,91 @@
 			<location>/home/franz/esp-idf-v5.1/components/mbedtls/port/sha/esp_sha.c</location>
 		</link>
 		<link>
+			<name>build/ide/esp_idf_components/mqtt/esp-mqtt/lib/mqtt_msg.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/mqtt/esp-mqtt/lib/mqtt_msg.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/mqtt/esp-mqtt/lib/mqtt_outbox.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/mqtt/esp-mqtt/lib/mqtt_outbox.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/mqtt/esp-mqtt/lib/platform_esp32_idf.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/mqtt/esp-mqtt/lib/platform_esp32_idf.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/protobuf-c/protobuf-c/protobuf-c/protobuf-c.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/protobuf-c/protobuf-c/protobuf-c/protobuf-c.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/protocomm/src/common/protocomm.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/protocomm/src/common/protocomm.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/protocomm/src/security/security0.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/protocomm/src/security/security0.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/protocomm/src/security/security1.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/protocomm/src/security/security1.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/protocomm/src/security/security2.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/protocomm/src/security/security2.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/protocomm/src/transports/protocomm_console.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/protocomm/src/transports/protocomm_console.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/protocomm/src/transports/protocomm_httpd.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/protocomm/src/transports/protocomm_httpd.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/spiffs/spiffs/src/spiffs_cache.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/spiffs/spiffs/src/spiffs_cache.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/spiffs/spiffs/src/spiffs_check.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/spiffs/spiffs/src/spiffs_check.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/spiffs/spiffs/src/spiffs_gc.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/spiffs/spiffs/src/spiffs_gc.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/spiffs/spiffs/src/spiffs_hydrogen.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/spiffs/spiffs/src/spiffs_hydrogen.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/spiffs/spiffs/src/spiffs_nucleus.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/spiffs/spiffs/src/spiffs_nucleus.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/unity/port/esp/unity_utils_memory_esp.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/unity/port/esp/unity_utils_memory_esp.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/unity/unity/src/unity.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/unity/unity/src/unity.c</location>
+		</link>
+		<link>
 			<name>build/ide/esp_idf_components/wpa_supplicant/esp_supplicant/src/esp_common.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/wpa_supplicant/esp_supplicant/src/esp_common.c</location>
@@ -2664,6 +3444,21 @@
 			<location>/home/franz/esp-idf-v5.1/components/wpa_supplicant/src/wps/wps_enrollee.c</location>
 		</link>
 		<link>
+			<name>build/ide/esp_idf_components/esp_gdbstub/src/port/xtensa/gdbstub-entry.S</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_gdbstub/src/port/xtensa/gdbstub-entry.S</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_gdbstub/src/port/xtensa/gdbstub_xtensa.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_gdbstub/src/port/xtensa/gdbstub_xtensa.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/esp_gdbstub/src/port/xtensa/xt_debugexception.S</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/esp_gdbstub/src/port/xtensa/xt_debugexception.S</location>
+		</link>
+		<link>
 			<name>build/ide/esp_idf_components/esp_system/port/arch/xtensa/debug_helpers.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/esp_system/port/arch/xtensa/debug_helpers.c</location>
@@ -2742,6 +3537,11 @@
 			<name>build/ide/esp_idf_components/esp_system/port/soc/esp32/system_internal.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/esp_system/port/soc/esp32/system_internal.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/espcoredump/src/port/xtensa/core_dump_port.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/espcoredump/src/port/xtensa/core_dump_port.c</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c</name>
@@ -2947,6 +3747,16 @@
 			<name>build/ide/esp_idf_components/mbedtls/port/sha/parallel_engine/sha.c</name>
 			<type>1</type>
 			<location>/home/franz/esp-idf-v5.1/components/mbedtls/port/sha/parallel_engine/sha.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/protocomm/src/crypto/srp6a/esp_srp.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/protocomm/src/crypto/srp6a/esp_srp.c</location>
+		</link>
+		<link>
+			<name>build/ide/esp_idf_components/protocomm/src/crypto/srp6a/esp_srp_mpi.c</name>
+			<type>1</type>
+			<location>/home/franz/esp-idf-v5.1/components/protocomm/src/crypto/srp6a/esp_srp_mpi.c</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/wpa_supplicant/esp_supplicant/src/crypto/crypto_mbedtls-bignum.c</name>

@@ -6,5 +6,7 @@ idf_component_register(
     	"include/base64"
     	"include/ed25519"
     	"include/json"
-    	"include/sha256")
+    	"include/sha256"
+    PRIV_REQUIRES
+    	mbedtls)
 
