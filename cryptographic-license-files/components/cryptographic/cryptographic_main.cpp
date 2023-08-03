@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <algorithm>
 #include <iostream>
+#include <iomanip>
 #include <sstream>
 #include <fstream>
 #include <string>
@@ -251,13 +252,30 @@ bool verify_license_file(const std::string pubkey, license_file lic)
   return (bool) ok;
 }
 
+
+std::string hexStr(const uint8_t *data, int len)
+{
+     std::stringstream ss;
+     ss << std::hex;
+
+     for( int i(0) ; i < len; ++i )
+         ss << std::setw(2) << std::setfill('0') << (int)data[i];
+
+     return ss.str();
+}
+
 // decrypt_license_file decrypts a license file with AES-256-GCM, returning the decrypted plaintext.
 std::string decrypt_license_file(const std::string key, license_file lic)
 {
   // Hash license key to get encryption key
   uint8_t key_bytes[32];
 
+  std::cout << "****************************************************" << std::endl;
+  std::cout << "key  ##" << key.c_str() << "##   size  " << key.size()  << std::endl;
+
   sha256_easy_hash(key.c_str(), key.size(), key_bytes);
+
+  std::cout << "key_bytes  ##" << hexStr(key_bytes, 32) << "##   size   " << 32  << std::endl;
 
   // Parse the encoded data
   auto parts = split(lic.enc, ".", 3);
