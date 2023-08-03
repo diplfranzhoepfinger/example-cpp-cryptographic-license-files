@@ -420,38 +420,12 @@ license parse_license(const std::string dec)
 }
 
 // main runs the example program.
-int main(int argc, char* argv[])
+int cryptographic_main(void)
 {
-  if (argc != 2)
-  {
-    std::cerr << colorize("[ERROR]", 31) << " "
-              << "No path given"
-              << std::endl;
 
-    return 1;
-  }
-
-  if (!getenv("KEYGEN_PUBLIC_KEY"))
-  {
-    std::cerr << colorize("[ERROR]", 31) << " "
-              << "Environment variable KEYGEN_PUBLIC_KEY is missing"
-              << std::endl;
-
-    return 1;
-  }
-
-  if (!getenv("KEYGEN_LICENSE_KEY"))
-  {
-    std::cerr << colorize("[ERROR]", 31) << " "
-              << "Environment variable KEYGEN_LICENSE_KEY is missing"
-              << std::endl;
-
-    return 1;
-  }
-
-  std::string pubkey = getenv("KEYGEN_PUBLIC_KEY");
-  std::string secret = getenv("KEYGEN_LICENSE_KEY");
-  std::string path = argv[1];
+  std::string pubkey = "e8601e48b69383ba520245fd07971e983d06d22c4257cfd82304601479cee788";
+  std::string secret = "E1FBA2-5488D8-8AC81A-53157E-01939A-V3";
+  std::string path = "/spiffs/license.lic";
 
   std::cout << colorize("[INFO]", 34) << " "
               << "Importing..."

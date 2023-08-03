@@ -1,6 +1,9 @@
 idf_component_register(
 	SRCS 
-		"main.cpp"
+		"cryptographic_main.cpp"
+    	"include/ed25519/verify.c"
+    	"include/ed25519/sha512.c"
+    	"include/sha256/sha256.c"
     INCLUDE_DIRS 
     	"include"
     	"include/base64"

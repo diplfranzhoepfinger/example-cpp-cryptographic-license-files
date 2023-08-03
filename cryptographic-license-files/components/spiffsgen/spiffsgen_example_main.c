@@ -14,27 +14,7 @@
 
 static const char *TAG = "example";
 
-static void read_hello_txt(void)
-{
-    ESP_LOGI(TAG, "Reading hello.txt");
-
-    // Open for reading hello.txt
-    FILE* f = fopen("/spiffs/hello.txt", "r");
-    if (f == NULL) {
-        ESP_LOGE(TAG, "Failed to open hello.txt");
-        return;
-    }
-
-    char buf[64];
-    memset(buf, 0, sizeof(buf));
-    fread(buf, 1, sizeof(buf), f);
-    fclose(f);
-
-    // Display the read contents from the file
-    ESP_LOGI(TAG, "Read from hello.txt: %s", buf);
-}
-
-void spiffsgen_example_main(void)
+void spiffsgen_example_mount(void)
 {
     ESP_LOGI(TAG, "Initializing SPIFFS");
 
@@ -68,14 +48,10 @@ void spiffsgen_example_main(void)
         ESP_LOGI(TAG, "Partition size: total: %d, used: %d", total, used);
     }
 
-    /* The following calls demonstrate reading files from the generated SPIFFS
-     * image. The images should contain the same files and contents as the spiffs_image directory.
-     */
+}
 
-    // Read and display the contents of a small text file (hello.txt)
-    read_hello_txt();
-
-
+void spiffsgen_example_unmount(void)
+{
     // All done, unmount partition and disable SPIFFS
     esp_vfs_spiffs_unregister(NULL);
     ESP_LOGI(TAG, "SPIFFS unmounted");
