@@ -294,20 +294,34 @@ std::string decrypt_license_file(const std::string key, license_file lic)
   auto tag_bytes = unbase64(tag.c_str(), tag.size(), &tag_size);
   auto plaintext_bytes = new unsigned char[ciphertext_size];
 
+
+  std::cout << "**** iv_size ***" << iv_size << std::endl;
+  std::cout << "**** tag_size ***" << tag_size << std::endl;
+
+  wolfCrypt_Init();
+
+
   // Initialize AES
   std::cout << "**** before EVP_aes_256_gcm ***" << std::endl;
   auto cipher = EVP_aes_256_gcm();
   std::cout << "**** after EVP_aes_256_gcm ***" << std::endl;
 
+
+
+
   std::cout << "**** before EVP_CIPHER_CTX_new ***" << std::endl;
-  auto ctx = EVP_CIPHER_CTX_new();
+  EVP_CIPHER_CTX *ctx = EVP_CIPHER_CTX_new();
+  if (ctx == nullptr) {
+	  std::cout << "issue creating ctx" << std::endl;
+      return "";
+  }
   std::cout << "**** after EVP_CIPHER_CTX_new ***" << std::endl;
 
 
   int ret = 0;
   // Decrypt
   std::cout << "**** before EVP_DecryptInit_ex ***" << std::endl;
-  ret = EVP_DecryptInit_ex(ctx, cipher, nullptr, nullptr, nullptr);
+  ret = EVP_DecryptInit_ex(ctx, cipher, nullptr, key_bytes, iv_bytes);
   switch (ret) {
   case SSL_SUCCESS:
 	  std::cout << "EVP_DecryptInit_ex SSL_SUCCESS" << std::endl;
@@ -338,23 +352,34 @@ std::string decrypt_license_file(const std::string key, license_file lic)
 
 
 
+  std::cout << "**** before EVP_CIPHER_CTX_ctrl ***" << std::endl;
+  ret = EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_TAG, tag_size, tag_bytes);
+  switch (ret) {
+  case SSL_SUCCESS:
+	  std::cout << "EVP_CIPHER_CTX_ctrl SSL_SUCCESS" << std::endl;
+	  break;
+  case SSL_FAILURE:
+	  std::cout << "EVP_CIPHER_CTX_ctrl SSL_FAILURE" << std::endl;
+	  break;
+  default:
+	  std::cout << "EVP_CIPHER_CTX_ctrl returned " << ret << std::endl;
+	  break;
+  }
+  std::cout << "**** after EVP_CIPHER_CTX_ctrl ***" << std::endl;
 
-  EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_TAG, tag_size, tag_bytes);
 
-  auto status = EVP_DecryptInit_ex(ctx, nullptr, nullptr, key_bytes, iv_bytes);
+  std::cout << "**** aes_size ***" << aes_size  << "ciphertext_size" << ciphertext_size << std::endl;
+  auto status = EVP_DecryptUpdate(ctx, plaintext_bytes, &aes_size, ciphertext_bytes, ciphertext_size);
   if (status == 0)
   {
     return "";
   }
 
-  status = EVP_DecryptUpdate(ctx, plaintext_bytes, &aes_size, ciphertext_bytes, ciphertext_size);
-  if (status == 0)
-  {
-    return "";
-  }
+  std::cout << "**** aes_size ***" << aes_size << std::endl;
 
   // Finalize
   EVP_DecryptFinal_ex(ctx, nullptr, &aes_size);
+  std::cout << "**** aes_size ***" << aes_size << std::endl;
   EVP_CIPHER_CTX_free(ctx);
 
   // Convert plaintext to string
