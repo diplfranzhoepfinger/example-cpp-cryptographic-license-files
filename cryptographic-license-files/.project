@@ -79,9 +79,9 @@
 			<location>/home/franz/esp-idf-v5.1/components/esp-tls/esp_tls_error_capture.c</location>
 		</link>
 		<link>
-			<name>build/ide/esp_idf_components/esp-tls/esp_tls_mbedtls.c</name>
+			<name>build/ide/esp_idf_components/esp-tls/esp_tls_wolfssl.c</name>
 			<type>1</type>
-			<location>/home/franz/esp-idf-v5.1/components/esp-tls/esp_tls_mbedtls.c</location>
+			<location>/home/franz/esp-idf-v5.1/components/esp-tls/esp_tls_wolfssl.c</location>
 		</link>
 		<link>
 			<name>build/ide/esp_idf_components/esp_adc/adc_cali.c</name>
