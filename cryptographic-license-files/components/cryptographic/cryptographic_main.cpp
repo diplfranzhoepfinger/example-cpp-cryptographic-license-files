@@ -314,36 +314,6 @@ license parse_license(const std::string dec)
     return lcs;
   }
 
-  auto meta = value.get("meta");
-  auto issued_at = strtotime(meta.get("issued").to_str());
-  auto now = time(0);
-
-  // Assert that current system time is not in the past.
-  if (now < issued_at)
-  {
-    std::cerr << colorize("[ERROR]", 31) << " "
-              << "System clock is desynced!"
-              << std::endl;
-
-    return lcs;
-  }
-
-  auto ttl = meta.get("ttl");
-  if (ttl.is<double>())
-  {
-    auto expires_at = strtotime(meta.get("expiry").to_str());
-
-    // Assert that license file has not expired.
-    if (now > expires_at)
-    {
-      std::cerr << colorize("[ERROR]", 31) << " "
-                << "License file has expired!"
-                << std::endl;
-
-      return lcs;
-    }
-  }
-
   auto data = value.get("data");
   auto attrs = data.get("attributes");
 
