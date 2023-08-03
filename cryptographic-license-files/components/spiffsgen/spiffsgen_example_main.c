@@ -11,7 +11,6 @@
 #include "esp_err.h"
 #include "esp_log.h"
 #include "esp_spiffs.h"
-#include "mbedtls/md5.h"
 
 static const char *TAG = "example";
 
@@ -33,49 +32,6 @@ static void read_hello_txt(void)
 
     // Display the read contents from the file
     ESP_LOGI(TAG, "Read from hello.txt: %s", buf);
-}
-
-static void compute_alice_txt_md5(void)
-{
-    ESP_LOGI(TAG, "Computing alice.txt MD5 hash");
-
-    // The file alice.txt lives under a subdirectory, though SPIFFS itself is flat
-    FILE* f = fopen("/spiffs/sub/alice.txt", "r");
-    if (f == NULL) {
-        ESP_LOGE(TAG, "Failed to open alice.txt");
-        return;
-    }
-
-    // Read file and compute the digest chunk by chunk
-    #define MD5_MAX_LEN 16
-
-    char buf[64];
-    mbedtls_md5_context ctx;
-    unsigned char digest[MD5_MAX_LEN];
-
-    mbedtls_md5_init(&ctx);
-    mbedtls_md5_starts(&ctx);
-
-    size_t read;
-
-    do {
-        read = fread((void*) buf, 1, sizeof(buf), f);
-        mbedtls_md5_update(&ctx, (unsigned const char*) buf, read);
-    } while(read == sizeof(buf));
-
-    mbedtls_md5_finish(&ctx, digest);
-
-    // Create a string of the digest
-    char digest_str[MD5_MAX_LEN * 2];
-
-    for (int i = 0; i < MD5_MAX_LEN; i++) {
-        sprintf(&digest_str[i * 2], "%02x", (unsigned int)digest[i]);
-    }
-
-    // For reference, MD5 should be deeb71f585cbb3ae5f7976d5127faf2a
-    ESP_LOGI(TAG, "Computed MD5 hash of alice.txt: %s", digest_str);
-
-    fclose(f);
 }
 
 void spiffsgen_example_main(void)
@@ -119,8 +75,6 @@ void spiffsgen_example_main(void)
     // Read and display the contents of a small text file (hello.txt)
     read_hello_txt();
 
-    // Compute and display the MD5 hash of a large text file (alice.txt)
-    compute_alice_txt_md5();
 
     // All done, unmount partition and disable SPIFFS
     esp_vfs_spiffs_unregister(NULL);
