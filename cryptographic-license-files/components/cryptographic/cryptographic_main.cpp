@@ -2,7 +2,7 @@
 #include "include/sha256/sha256.h"
 #include "include/base64/base64.h"
 #include "include/json/picojson.h"
-#include <openssl/ssl.h>
+#include "wolfssl/ssl.h"
 #include <stdlib.h>
 #include <assert.h>
 #include <unordered_map>
@@ -88,7 +88,7 @@ std::time_t strtotime(const std::string s) {
 
   strptime(s.c_str(), "%FT%T%z", &t);
 
-  return timegm(&t);
+  return mktime(&t);
 }
 
 // license_file represents a Keygen license file resource.
@@ -267,7 +267,6 @@ std::string decrypt_license_file(const std::string key, license_file lic)
 
   // Convert to bytes
   int ciphertext_size;
-  int plaintext_size;
   int iv_size;
   int tag_size;
   int aes_size;
@@ -279,27 +278,18 @@ std::string decrypt_license_file(const std::string key, license_file lic)
 
   // Initialize AES
   auto cipher = EVP_aes_256_gcm();
-  auto ctx = EVP_CIPHER_CTX_new();
+  EVP_CIPHER_CTX *ctx = EVP_CIPHER_CTX_new();
 
   // Decrypt
+  EVP_CIPHER_CTX_init(ctx);
   EVP_DecryptInit_ex(ctx, cipher, nullptr, nullptr, nullptr);
   EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_IVLEN, iv_size, nullptr);
+  EVP_DecryptInit_ex(ctx, nullptr, nullptr, key_bytes, iv_bytes);
+  EVP_DecryptUpdate(ctx, plaintext_bytes, &aes_size, ciphertext_bytes, ciphertext_size);
   EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_TAG, tag_size, tag_bytes);
 
-  auto status = EVP_DecryptInit_ex(ctx, nullptr, nullptr, key_bytes, iv_bytes);
-  if (status == 0)
-  {
-    return "";
-  }
-
-  status = EVP_DecryptUpdate(ctx, plaintext_bytes, &aes_size, ciphertext_bytes, ciphertext_size);
-  if (status == 0)
-  {
-    return "";
-  }
-
   // Finalize
-  EVP_DecryptFinal_ex(ctx, nullptr, &aes_size);
+  EVP_DecryptFinal_ex(ctx, plaintext_bytes, &aes_size);
   EVP_CIPHER_CTX_free(ctx);
 
   // Convert plaintext to string
@@ -322,36 +312,6 @@ license parse_license(const std::string dec)
               << std::endl;
 
     return lcs;
-  }
-
-  auto meta = value.get("meta");
-  auto issued_at = strtotime(meta.get("issued").to_str());
-  auto now = time(0);
-
-  // Assert that current system time is not in the past.
-  if (now < issued_at)
-  {
-    std::cerr << colorize("[ERROR]", 31) << " "
-              << "System clock is desynced!"
-              << std::endl;
-
-    return lcs;
-  }
-
-  auto ttl = meta.get("ttl");
-  if (ttl.is<double>())
-  {
-    auto expires_at = strtotime(meta.get("expiry").to_str());
-
-    // Assert that license file has not expired.
-    if (now > expires_at)
-    {
-      std::cerr << colorize("[ERROR]", 31) << " "
-                << "License file has expired!"
-                << std::endl;
-
-      return lcs;
-    }
   }
 
   auto data = value.get("data");
@@ -377,7 +337,7 @@ license parse_license(const std::string dec)
 
       if (type == "entitlements")
       {
-        entitlement entl {id};
+        entitlement entl {id, "", ""};
 
         entl.name = attrs.get("name").to_str();
         entl.code = attrs.get("code").to_str();
@@ -387,7 +347,7 @@ license parse_license(const std::string dec)
 
       if (type == "products")
       {
-        product prod {id};
+        product prod {id, ""};
 
         prod.name = attrs.get("name").to_str();
 
@@ -396,7 +356,7 @@ license parse_license(const std::string dec)
 
       if (type == "policies")
       {
-        policy pol {id};
+        policy pol {id, ""};
 
         pol.name = attrs.get("name").to_str();
 
@@ -405,7 +365,7 @@ license parse_license(const std::string dec)
 
       if (type == "users")
       {
-        user usr {id};
+        user usr {id, "", "", "", ""};
 
         usr.first_name = attrs.get("firstName").to_str();
         usr.last_name = attrs.get("lastName").to_str();
@@ -420,39 +380,16 @@ license parse_license(const std::string dec)
   return lcs;
 }
 
+
 // main runs the example program.
-int main(int argc, char* argv[])
+int cryptographic_main(void)
 {
-  if (argc != 2)
-  {
-    std::cerr << colorize("[ERROR]", 31) << " "
-              << "No path given"
-              << std::endl;
 
-    return 1;
-  }
+  std::string pubkey = "e8601e48b69383ba520245fd07971e983d06d22c4257cfd82304601479cee788";
+  std::string secret = "E1FBA2-5488D8-8AC81A-53157E-01939A-V3";
+  std::string path = "/spiffs/license.lic";
 
-  if (!getenv("KEYGEN_PUBLIC_KEY"))
-  {
-    std::cerr << colorize("[ERROR]", 31) << " "
-              << "Environment variable KEYGEN_PUBLIC_KEY is missing"
-              << std::endl;
 
-    return 1;
-  }
-
-  if (!getenv("KEYGEN_LICENSE_KEY"))
-  {
-    std::cerr << colorize("[ERROR]", 31) << " "
-              << "Environment variable KEYGEN_LICENSE_KEY is missing"
-              << std::endl;
-
-    return 1;
-  }
-
-  std::string pubkey = getenv("KEYGEN_PUBLIC_KEY");
-  std::string secret = getenv("KEYGEN_LICENSE_KEY");
-  std::string path = argv[1];
 
   std::cout << colorize("[INFO]", 34) << " "
               << "Importing..."
@@ -494,7 +431,7 @@ int main(int argc, char* argv[])
       std::cerr << colorize("[ERROR]", 31) << " "
                 << "Failed to decrypt license file!"
                 << std::endl;
-
+      //std::cout << dec << std::endl;
       return 1;
     }
 
