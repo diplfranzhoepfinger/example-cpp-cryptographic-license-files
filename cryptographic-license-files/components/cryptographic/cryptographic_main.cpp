@@ -379,23 +379,7 @@ license parse_license(const std::string dec)
 
   return lcs;
 }
-#define WOLFSSL_CIPHER_LIST_MAX_SIZE    2048
 
-#ifdef CONFIG_ESP_DEBUG_WOLFSSL
-static void show_ciphers(void)
-{
-    char *ciphers = (char *)calloc(WOLFSSL_CIPHER_LIST_MAX_SIZE, sizeof(char));
-    if (ciphers != NULL) {
-        int ret = wolfSSL_get_ciphers(ciphers, WOLFSSL_CIPHER_LIST_MAX_SIZE);
-        if (ret == WOLFSSL_SUCCESS) {
-        	std::cout << "Available Ciphers: " << ciphers << std::endl;
-        } else {
-        	std::cout << "Failed to get cipher list!"<< std::endl;
-        }
-        free(ciphers);
-    }
-}
-#endif
 
 // main runs the example program.
 int cryptographic_main(void)
@@ -404,12 +388,6 @@ int cryptographic_main(void)
   std::string pubkey = "e8601e48b69383ba520245fd07971e983d06d22c4257cfd82304601479cee788";
   std::string secret = "E1FBA2-5488D8-8AC81A-53157E-01939A-V3";
   std::string path = "/spiffs/license.lic";
-
-
-#ifdef CONFIG_ESP_DEBUG_WOLFSSL
-    wolfSSL_Debugging_ON();
-    show_ciphers();
-#endif /* DEBUG_WOLFSSL */
 
 
 
