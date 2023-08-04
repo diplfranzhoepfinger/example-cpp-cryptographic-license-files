@@ -1,0 +1,3 @@
+[submodule "cryptographic-license-files/components/esp-wolfssl"]
+	path = cryptographic-license-files/components/esp-wolfssl
+	url = https://github.com/espressif/esp-wolfssl.git
