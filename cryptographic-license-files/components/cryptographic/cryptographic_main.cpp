@@ -289,8 +289,8 @@ std::string decrypt_license_file(const std::string key, license_file lic)
 
   // Decrypt
   mbedtls_gcm_setkey(       &ctx, MBEDTLS_CIPHER_ID_AES, key_bytes, aes_size);
-  mbedtls_gcm_starts(       &ctx, MBEDTLS_GCM_DECRYPT, iv_bytes, iv_size);
-  mbedtls_gcm_crypt_and_tag(&ctx, MBEDTLS_GCM_DECRYPT, ciphertext_size, iv_bytes, iv_size, NULL, 0, ciphertext_bytes, plaintext_bytes, tag_size, tag_bytes);
+  mbedtls_gcm_starts(       &ctx, MBEDTLS_GCM_DECRYPT,                    iv_bytes, iv_size);
+  mbedtls_gcm_crypt_and_tag(&ctx, MBEDTLS_GCM_DECRYPT,   ciphertext_size, iv_bytes, iv_size, NULL, 0, ciphertext_bytes, plaintext_bytes, tag_size, tag_bytes);
 
   // Finalize
   mbedtls_gcm_free(&ctx);
