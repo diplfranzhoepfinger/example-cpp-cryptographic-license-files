@@ -17,6 +17,9 @@ extern "C" {
 const EVP_CIPHER *EVP_aes_128_gcm(void);
 const EVP_CIPHER *EVP_aes_128_cbc(void);
 
+const EVP_CIPHER *EVP_aes_256_gcm(void);
+const EVP_CIPHER *EVP_aes_256_cbc(void);
+
 void EVP_CIPHER_CTX_init(EVP_CIPHER_CTX *ctx);
 int EVP_CIPHER_CTX_cleanup(EVP_CIPHER_CTX *ctx);
 EVP_CIPHER_CTX *EVP_CIPHER_CTX_new(void);

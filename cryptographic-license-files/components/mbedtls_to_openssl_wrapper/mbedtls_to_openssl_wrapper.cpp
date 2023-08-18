@@ -1,8 +1,7 @@
-#include <openssl/rand.h>
 #include <openssl/evp.h>
 #include <mbedtls/gcm.h>
 #include <cstdlib>
-#include "Data.hpp"
+//#include "Data.hpp"
 
 struct MBED_CIPHER_CTX {
     mbedtls_gcm_context ctx;
@@ -16,6 +15,14 @@ const EVP_CIPHER *EVP_aes_128_gcm(void) {
 }
 
 const EVP_CIPHER *EVP_aes_128_cbc(void) {
+    return NULL;
+}
+
+const EVP_CIPHER *EVP_aes_256_gcm(void) {
+    return NULL;
+}
+
+const EVP_CIPHER *EVP_aes_256_cbc(void) {
     return NULL;
 }
 
@@ -109,13 +116,5 @@ int EVP_DecryptUpdate(EVP_CIPHER_CTX *ctx, unsigned char *out, int *outl, const 
 }
 
 int EVP_DecryptFinal_ex(EVP_CIPHER_CTX *ctx, unsigned char *outm, int *outl) {
-    return 1;
-}
-
-int RAND_bytes(unsigned char *buf, int num) {
-    Data rand = Data::random_bytes(num);
-    for (int i = 0; i < num; i++) {
-        buf[i] = rand.bytes()[i];
-    }
     return 1;
 }
