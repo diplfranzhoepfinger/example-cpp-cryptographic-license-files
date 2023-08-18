@@ -285,19 +285,32 @@ std::string decrypt_license_file(const std::string key, license_file lic)
   mbedtls_gcm_init(&ctx);
 
   // Decrypt
-  mbedtls_gcm_setkey(       &ctx, MBEDTLS_CIPHER_ID_AES, key_bytes, aes_size);
-  mbedtls_gcm_starts(       &ctx, MBEDTLS_GCM_DECRYPT,                    iv_bytes, iv_size);
-  mbedtls_gcm_crypt_and_tag(&ctx, MBEDTLS_GCM_DECRYPT,   ciphertext_size, iv_bytes, iv_size, NULL, 0, ciphertext_bytes, plaintext_bytes, tag_size, tag_bytes);
+  int status = 0;
+  status = mbedtls_gcm_setkey(       &ctx, MBEDTLS_CIPHER_ID_AES, key_bytes, aes_size);
+  if (status != 0) goto exit_error;
+  status = mbedtls_gcm_starts(       &ctx, MBEDTLS_GCM_DECRYPT,                    iv_bytes, iv_size);
+  if (status != 0) goto exit_error;
+  status = mbedtls_gcm_crypt_and_tag(&ctx, MBEDTLS_GCM_DECRYPT,   ciphertext_size, iv_bytes, iv_size, NULL, 0, ciphertext_bytes, plaintext_bytes, tag_size, tag_bytes);
+  if (status != 0) goto exit_error;
 
   // Finalize
   mbedtls_gcm_free(&ctx);
 
-  // Convert plaintext to string
-  std::string plaintext(reinterpret_cast<char const*>(plaintext_bytes));
-  delete[] plaintext_bytes;
+  //good case:
+  {
+	  // Convert plaintext to string
+	  std::string plaintext(reinterpret_cast<char const*>(plaintext_bytes));
+	  delete[] plaintext_bytes;
+	  return plaintext;
+  }
 
-  return plaintext;
-}
+  //error case:
+  exit_error:
+    // Finalize
+    mbedtls_gcm_free(&ctx);
+    delete[] plaintext_bytes;
+    return "";
+  }
 
 // parse_license parses a JSON string into a license struct.
 license parse_license(const std::string dec)
