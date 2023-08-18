@@ -282,6 +282,7 @@ std::string decrypt_license_file(const std::string key, license_file lic)
 
   // Initialize AES
   mbedtls_gcm_context ctx;
+  mbedtls_gcm_init(&ctx);
 
   // Decrypt
   mbedtls_gcm_setkey(       &ctx, MBEDTLS_CIPHER_ID_AES, key_bytes, aes_size);
