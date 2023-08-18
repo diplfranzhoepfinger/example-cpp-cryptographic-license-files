@@ -75,7 +75,7 @@ int EVP_CIPHER_CTX_ctrl(EVP_CIPHER_CTX *ctx, int type, int arg, void *ptr) {
 int EVP_EncryptInit_ex(EVP_CIPHER_CTX *ctx, const EVP_CIPHER *cipher, ENGINE *impl, const unsigned char *key, const unsigned char *iv) {
     if (ctx && key != NULL && iv != NULL) {
         mbedtls_gcm_setkey(&ctx->ctx, MBEDTLS_CIPHER_ID_AES, key, ctx->iv_len * 8);
-        mbedtls_gcm_starts(&ctx->ctx, MBEDTLS_GCM_ENCRYPT, iv, ctx->iv_len, NULL, 0);
+        mbedtls_gcm_starts(&ctx->ctx, MBEDTLS_GCM_ENCRYPT, iv, ctx->iv_len);
         ctx->iv = iv;
     }
     return 1;
@@ -99,7 +99,7 @@ int EVP_EncryptFinal_ex(EVP_CIPHER_CTX *ctx, unsigned char *out, int *outl) {
 int EVP_DecryptInit_ex(EVP_CIPHER_CTX *ctx, const EVP_CIPHER *cipher, ENGINE *impl, const unsigned char *key, const unsigned char *iv) {
     if (ctx && key != NULL && iv != NULL) {
         mbedtls_gcm_setkey(&ctx->ctx, MBEDTLS_CIPHER_ID_AES, key, ctx->iv_len * 8);
-        mbedtls_gcm_starts(&ctx->ctx, MBEDTLS_GCM_DECRYPT, iv, ctx->iv_len, NULL, 0);
+        mbedtls_gcm_starts(&ctx->ctx, MBEDTLS_GCM_DECRYPT, iv, ctx->iv_len);
         ctx->iv = iv;
     }
     return 1;
