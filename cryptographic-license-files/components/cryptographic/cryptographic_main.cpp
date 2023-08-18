@@ -2,7 +2,6 @@
 #include "include/sha256/sha256.h"
 #include "include/base64/base64.h"
 #include "include/json/picojson.h"
-#include "openssl/evp.h"
 #include "mbedtls/gcm.h"
 #include <stdlib.h>
 #include <assert.h>

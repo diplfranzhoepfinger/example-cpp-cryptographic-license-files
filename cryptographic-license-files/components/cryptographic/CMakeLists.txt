@@ -14,6 +14,5 @@ idf_component_register(
     	"include/json"
     	"include/sha256"
     PRIV_REQUIRES
-        mbedtls
-    	mbedtls_to_openssl_wrapper)
+        mbedtls)
 
