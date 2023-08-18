@@ -11,5 +11,5 @@ idf_component_register(
     	"include/json"
     	"include/sha256"
     PRIV_REQUIRES
-    	esp-wolfssl)
+    	)
 
