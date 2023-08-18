@@ -2,7 +2,7 @@
 #include "include/sha256/sha256.h"
 #include "include/base64/base64.h"
 #include "include/json/picojson.h"
-#include "wolfssl/ssl.h"
+#include "mbedtls/gcm.h"
 #include <stdlib.h>
 #include <assert.h>
 #include <unordered_map>
@@ -251,11 +251,15 @@ bool verify_license_file(const std::string pubkey, license_file lic)
   return (bool) ok;
 }
 
+
+
+#define key_bytes_num 32
+
 // decrypt_license_file decrypts a license file with AES-256-GCM, returning the decrypted plaintext.
 std::string decrypt_license_file(const std::string key, license_file lic)
 {
   // Hash license key to get encryption key
-  uint8_t key_bytes[32];
+  uint8_t key_bytes[key_bytes_num];
 
   sha256_easy_hash(key.c_str(), key.size(), key_bytes);
 
@@ -269,7 +273,7 @@ std::string decrypt_license_file(const std::string key, license_file lic)
   int ciphertext_size;
   int iv_size;
   int tag_size;
-  int aes_size;
+  int aes_size = key_bytes_num * 8; //256
 
   auto ciphertext_bytes = unbase64(ciphertext.c_str(), ciphertext.size(), &ciphertext_size);
   auto iv_bytes = unbase64(iv.c_str(), iv.size(), &iv_size);
@@ -277,23 +281,19 @@ std::string decrypt_license_file(const std::string key, license_file lic)
   auto plaintext_bytes = new unsigned char[ciphertext_size];
 
   // Initialize AES
-  auto cipher = EVP_aes_256_gcm();
-  EVP_CIPHER_CTX *ctx = EVP_CIPHER_CTX_new();
+  mbedtls_gcm_context ctx;
 
   // Decrypt
-  EVP_CIPHER_CTX_init(ctx);
-  EVP_DecryptInit_ex(ctx, cipher, nullptr, nullptr, nullptr);
-  EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_IVLEN, iv_size, nullptr);
-  EVP_DecryptInit_ex(ctx, nullptr, nullptr, key_bytes, iv_bytes);
-  EVP_DecryptUpdate(ctx, plaintext_bytes, &aes_size, ciphertext_bytes, ciphertext_size);
-  EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_TAG, tag_size, tag_bytes);
+  mbedtls_gcm_setkey(       &ctx, MBEDTLS_CIPHER_ID_AES, key_bytes, aes_size);
+  mbedtls_gcm_starts(       &ctx, MBEDTLS_GCM_DECRYPT,                    iv_bytes, iv_size);
+  mbedtls_gcm_crypt_and_tag(&ctx, MBEDTLS_GCM_DECRYPT,   ciphertext_size, iv_bytes, iv_size, NULL, 0, ciphertext_bytes, plaintext_bytes, tag_size, tag_bytes);
 
   // Finalize
-  EVP_DecryptFinal_ex(ctx, plaintext_bytes, &aes_size);
-  EVP_CIPHER_CTX_free(ctx);
+  mbedtls_gcm_free(&ctx);
 
   // Convert plaintext to string
   std::string plaintext(reinterpret_cast<char const*>(plaintext_bytes));
+  delete[] plaintext_bytes;
 
   return plaintext;
 }
@@ -431,7 +431,7 @@ int cryptographic_main(void)
       std::cerr << colorize("[ERROR]", 31) << " "
                 << "Failed to decrypt license file!"
                 << std::endl;
-      //std::cout << dec << std::endl;
+      std::cout << dec << std::endl;
       return 1;
     }
 
