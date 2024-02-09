@@ -315,17 +315,6 @@ std::string decrypt_license_file(const std::string key, license_file lic)
     return "";
   }
 
-  // Finalize
-  EVP_DecryptFinal_ex(ctx, nullptr, &aes_size);
-  EVP_CIPHER_CTX_free(ctx);
-
-  // Convert plaintext to string
-  std::string plaintext(plaintext_bytes, plaintext_bytes + ciphertext_size);
-  delete[] plaintext_bytes;
-
-  return plaintext;
-}
-
 // parse_license parses a JSON string into a license struct.
 license parse_license(const std::string dec)
 {
