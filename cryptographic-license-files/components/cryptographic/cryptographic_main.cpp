@@ -404,7 +404,7 @@ int cryptographic_main(void)
 
   std::string pubkey = "e8601e48b69383ba520245fd07971e983d06d22c4257cfd82304601479cee788";
   std::string secret = "E1FBA2-5488D8-8AC81A-53157E-01939A-V3";
-  std::string path = "/spiffs/license.lic";
+  std::string path = "/spiflash/license.lic";
 
 
 
