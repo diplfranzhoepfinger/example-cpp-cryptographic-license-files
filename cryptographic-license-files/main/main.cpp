@@ -4,8 +4,8 @@
 
 
 
-extern "C" void spiffsgen_example_mount(void);
-extern "C" void spiffsgen_example_unmount(void);
+extern "C" void fatfsgen_example_mount(void);
+extern "C" void fatfsgen_example_unmount(void);
 
 
 int cryptographic_main(void);
@@ -15,11 +15,11 @@ extern "C" void app_main()
 {
 
 
-	spiffsgen_example_mount();
+	fatfsgen_example_mount();
 
 
 	cryptographic_main();
 
-	spiffsgen_example_unmount();
+	fatfsgen_example_unmount();
 
 }
