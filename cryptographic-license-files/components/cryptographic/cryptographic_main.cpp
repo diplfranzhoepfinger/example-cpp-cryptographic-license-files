@@ -301,10 +301,10 @@ std::string decrypt_license_file(const std::string key, license_file lic)
 
   //good case:
   {
-	  // Convert plaintext to string
-	  std::string plaintext(reinterpret_cast<char const*>(plaintext_bytes));
-	  delete[] plaintext_bytes;
-	  return plaintext;
+    // Convert plaintext to string
+    std::string plaintext(reinterpret_cast<char const*>(plaintext_bytes));
+    delete[] plaintext_bytes;
+    return plaintext;
   }
 
   //error case:
